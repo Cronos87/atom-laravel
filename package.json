@@ -3,7 +3,10 @@
   "version": "0.1",
   "private": false,
   "description": "Adds Laravel snippets",
-  "repository": "https://github.com/atom/laravel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cronos87/atom-laravel"
+  },
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
