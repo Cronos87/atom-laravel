@@ -1,4 +1,4 @@
-# laravel package
+# Laravel 4 package
 
 Adds Laravel snippets
 
