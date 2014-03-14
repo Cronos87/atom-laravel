@@ -1,6 +1,6 @@
 # Laravel 4 package
 
-Adds Laravel snippets
+Add Laravel snippets
 
 * Laravel 4 snippets
 * Helpers snippets
