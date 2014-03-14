@@ -1,0 +1,13 @@
+{
+  "name": "laravel",
+  "version": "0.1",
+  "private": false,
+  "description": "Adds Laravel snippets",
+  "repository": "https://github.com/atom/laravel",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}

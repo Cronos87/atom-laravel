@@ -1,0 +1,427 @@
+'.source.php':
+  'App::abort':
+    'prefix': 'abort'
+    'body': 'App::abort(${1:404}${2:, \'${3:message}\'});'
+  'App::after':
+    'prefix': 'a:a'
+    'body': 'App::after(${1:function(${2:\\$request}, ${3:\\$response})\n{\n    $4\n\\}});'
+  'App::before':
+    'prefix': 'a:b'
+    'body': 'App::before(${1:function(${2:\\$request})\n{\n    $3\n\\}});'
+  'App::error':
+    'prefix': 'a:e'
+    'body': 'App::error(${1:function(${2:Exception} ${3:\\$exception})\n{\n    ${4:Log::error(\\$exception);}\n\\}});'
+  'App::fatal':
+    'prefix': 'a:f'
+    'body': 'App::fatal(${1:function(${2:\\$exception})\n{\n    $3\n\\}});'
+  'App::missing':
+    'prefix': 'a:m'
+    'body': 'App::missing(${1:function(${2:\\$exception})\n{\n    $3\n\\}});'
+  'App':
+    'prefix': 'app'
+    'body': 'App::${1|before,after,abort,missing,error,fatal|}(\'$2\', ${3:function(${4:\\$request})\n{\n    $5\n\\}});'
+  'Cookie::forever':
+    'prefix': 'c:f'
+    'body': 'Cookie::forever(\'${1:name}\', ${2:\'${3:value}\'});$3'
+  'Cookie::get':
+    'prefix': 'c:g'
+    'body': 'Cookie::get(\'${1:name}\');$2'
+  'Cookie::make':
+    'prefix': 'c:m'
+    'body': 'Cookie::make(\'${1:name}\', ${2:\'${3:value}\'}, ${3:minutes});$4'
+  'Cookie::queue':
+    'prefix': 'c:q'
+    'body': 'Cookie::queue(\'${1:name}\', ${2:\'${3:value}\'}, ${3:minutes});$4'
+  'Cookie':
+    'prefix': 'cookie'
+    'body': 'Cookie::${1|get,make,queue,forever|}($2);$3'
+  'array_add':
+    'prefix': 'arad'
+    'body': 'array_add(${1:\\$array}, ${2:\'${3:key}\'}, ${4:\'${5:key}\'});$6'
+  'array_divide':
+    'prefix': 'ardi'
+    'body': 'array_divide(${1:\\$array});$2'
+  'array_dot':
+    'prefix': 'ardo'
+    'body': 'array_dot(${1:\\$array});$2'
+  'array_except':
+    'prefix': 'arex'
+    'body': 'array_except(${1:\\$array}, ${2:array(${3:\'${4:key}\'})});$5'
+  'array_fetch':
+    'prefix': 'arfe'
+    'body': 'array_fetch(${1:\\$array}, ${2:\'${3:key}\'});$4'
+  'array_first':
+    'prefix': 'arfi'
+    'body': 'array_first(${1:\\$array}, ${2:\\$callback}${3:, ${4:\\$default}});$5'
+  'array_flatten':
+    'prefix': 'arfl'
+    'body': 'array_flatten(${1:\\$array});$2'
+  'array_forget':
+    'prefix': 'arfo'
+    'body': 'array_forget(${1:\\$array}, ${2:\'${3:key.name}\'});$4'
+  'array_get':
+    'prefix': 'arge'
+    'body': 'array_get(${1:\\$array}, ${2:\'${3:key.name}\'});$4'
+  'array_last':
+    'prefix': 'arla'
+    'body': 'array_last(${1:\\$array}, ${2:\\$callback}${3:, ${4:\\$default}});$5'
+  'array_only':
+    'prefix': 'aron'
+    'body': 'array_only(${1:\\$array}, ${2:array(${3:\'${4:key}\'})});$5'
+  'array_pluck':
+    'prefix': 'arpl'
+    'body': 'array_pluck(${1:\\$array}, ${2:\'${3:key}\'});$4'
+  'array_pull':
+    'prefix': 'arpu'
+    'body': 'array_pull(${1:\\$array}, ${2:\'${3:key}\'});$4'
+  'array_set':
+    'prefix': 'arse'
+    'body': 'array_set(${1:\\$array}, ${2:\'${3:key.name}\'}, ${4:\'${5:value}\'});$6'
+  'array_sort':
+    'prefix': 'arso'
+    'body': 'array_sort(${1:\\$array}, ${2:function(${3:\\$value})\n{\n    return $4;\n\\}});$5'
+  'array_where':
+    'prefix': 'arwh'
+    'body': 'array_where(${1:\\$array}, ${2:function(${3:\\$key}, ${4:\\$value})\n{\n    return $5;\n\\}});$6'
+  'head':
+    'prefix': 'arr:h'
+    'body': 'head(${1:\\$array});$2'
+  'last':
+    'prefix': 'arr:l'
+    'body': 'last(${1:\\$array});$2'
+  'csrf_token':
+    'prefix': 'csrf'
+    'body': 'csrf_token();$1'
+  'dd':
+    'prefix': 'dd'
+    'body': 'dd($1);$2'
+  'value':
+    'prefix': 'value'
+    'body': 'value(${1:function()\n{\n    ${2:return ${3:\'bar\'};}\n\\}});'
+  'with':
+    'prefix': 'with'
+    'body': 'with(${1:new Foo})$2;$3'
+  'app_path':
+    'prefix': 'path'
+    'body': 'app_path();$1'
+  'base_path':
+    'prefix': 'path'
+    'body': 'base_path();$1'
+  'public_path':
+    'prefix': 'path'
+    'body': 'public_path();$1'
+  'storage_path':
+    'prefix': 'path'
+    'body': 'storage_path();$1'
+  'camel_case':
+    'prefix': 'caca'
+    'body': 'camel_case(${1:\'${2:foo_bar}\'});$3'
+  'class_basename':
+    'prefix': 'clba'
+    'body': 'class_basename(${1:\'${2:Foo\\Bar}\'});$3'
+  'e':
+    'prefix': 'e'
+    'body': 'e(${1:\'${2:<p>html</p>}\'});$3'
+  'ends_with':
+    'prefix': 'enwi'
+    'body': 'ends_with(${1:\'${2:a suffix}\', ${3:\'${4:fix}\'});$5'
+  'snake_case':
+    'prefix': 'snca'
+    'body': 'snake_case(${1:\'${2:fooBar}\'});$3'
+  'starts_with':
+    'prefix': 'stwi'
+    'body': 'start_with(${1:\'${2:prefix me}\', ${3:\'${4:pre}\'});$5'
+  'str_contains':
+    'prefix': 'stco'
+    'body': 'str_contains(${1:\'${2:a whole string}\', ${3:\'${4:whole}\'});$5'
+  'str_finish':
+    'prefix': 'stfi'
+    'body': 'str_finish(${1:\'${2:a string}\', ${3:\'${4:.}\'});$5'
+  'str_is':
+    'prefix': 'stis'
+    'body': 'str_is(${1:\'${2:foo*}\', ${3:\'${4:foobar}\'});$5'
+  'str_limit':
+    'prefix': 'stli'
+    'body': 'str_limit(${1:\\$string}, ${2:10}, ${3:...});$4'
+  'str_plural':
+    'prefix': 'stpl'
+    'body': 'str_plural(${1:\'${2:car}\');$3'
+  'str_random':
+    'prefix': 'stra'
+    'body': 'str_random(${1:42);$2'
+  'str_singular':
+    'prefix': 'stsi'
+    'body': 'str_singular(${1:\'${2:cars}\');$3'
+  'studly_case':
+    'prefix': 'stca'
+    'body': 'studly_case(${1:\'${2:foo_bar}\'});$3'
+  'trans':
+    'prefix': 'tra'
+    'body': 'trans(${1:\'${2:string}\'});$3'
+  'trans_choice':
+    'prefix': 'trch'
+    'body': 'trans_choice(${1:\'${2:foo_bar}\'}, ${3:\\$count});$4'
+  'action':
+    'prefix': 'action'
+    'body': 'action(\'${1:Controller}\'${2:, \\$params})$3'
+  'asset':
+    'prefix': 'asset'
+    'body': 'asset(\'${1:img/pic.jpg}\')$2'
+  'link_to':
+    'prefix': 'linkto'
+    'body': 'link_to(\'${1:foo/bar}\'${2:, ${3:\\$title}}${4:, ${5:\\$attributes}}${6:, ${7:\\$secure}})'
+  'link_to_action':
+    'prefix': 'link:action'
+    'body': 'link_to_action(\'${1:Controller}\'${2:, ${3:\\$title}}${4:, ${5:\\$parameters}}${6:, ${7:\\$attributes}})'
+  'link_to_asset':
+    'prefix': 'link:asset'
+    'body': 'link_to_asset(\'${1:foo/bar.zip}\'${2:, ${3:\\$title}}${4:, ${5:\\$attributes}}${6:, ${7:\\$secure}})'
+  'link_to_route':
+    'prefix': 'link:route'
+    'body': 'link_to_route(\'${1:route.name}\'${2:, ${3:\\$title}}${4:, ${5:\\$parameters}}${6:, ${7:\\$attributes}})'
+  'route':
+    'prefix': 'route'
+    'body': 'route(\'${1:name}\'${2:, \\$params})$3'
+  'secure_asset':
+    'prefix': 'secure:a'
+    'body': 'secure_asset(\'${1:foo/bar.zip}\'${2:, ${3:\\$title}}${4:, ${5:\\$attributes}})'
+  'secure_url':
+    'prefix': 'secure:u'
+    'body': 'secure_url(\'${1:foo/bar}\'${2:, ${3:\\$parameters}})'
+  'url':
+    'prefix': 'url'
+    'body': 'url(\'${1:foo/bar}\'${2:, ${3:\\$parameters}}${4:, ${5:\\$secure}})'
+  '->where':
+    'prefix': ')where'
+    'body': '->where(${1:\'${2:name}\', ${3:\'pattern\'}})'
+  '->with':
+    'prefix': ')with'
+    'body': '->with(\'${1:name}\', ${2:\'value\'})'
+  'Input::all':
+    'prefix': 'i:a'
+    'body': 'Input::all();$1'
+  'Input::except':
+    'prefix': 'i:e'
+    'body': 'Input::except(${1:\'${2:name}\'}${3:, \'${4:name}\'});$5'
+  'Input::file->':
+    'prefix': 'i:f-'
+    'body': 'Input::file(${1:\'${2:name}\'})->${3|getRealPath,getClientOriginalName,getClientOriginalExtension,getSize,getMimeType|}();$4'
+  'Input::file':
+    'prefix': 'i:f'
+    'body': 'Input::file(${1:\'${2:name}\'})${3:->move(${4:\\$destinationPath}${5:, ${6:\\$fileName}})};$7'
+  'Input::flash':
+    'prefix': 'i:fl'
+    'body': 'Input::flash();$1'
+  'Input::flashExcept':
+    'prefix': 'i:fl'
+    'body': 'Input::flashExcept(${1:\'${2:name}\'}${3:, \'${4:name}\'});$5'
+  'Input::flashOnly':
+    'prefix': 'i:fl'
+    'body': 'Input::flashOnly(${1:\'${2:name}\'}${3:, \'${4:name}\'});$5'
+  'Input::get':
+    'prefix': 'i:g'
+    'body': 'Input::get(\'${1:name}\'${2:, ${3:\'default\'}});$4'
+  'Input::has':
+    'prefix': 'i:h'
+    'body': 'Input::has(${1:\'${2:name}\'});$3'
+  'Input::hasFile':
+    'prefix': 'i:hf'
+    'body': 'Input::hasFile(${1:\'${2:name}\'});$3'
+  'Input::old':
+    'prefix': 'i:o'
+    'body': 'Input::old(${1:\'${2:name}\'});$3'
+  'Input::only':
+    'prefix': 'i:o'
+    'body': 'Input::only(${1:\'${2:name}\'}${3:, \'${4:name}\'});$5'
+  'Input':
+    'prefix': 'input'
+    'body': 'Input::${1|get,has,all,only,except|}($2);$3'
+  'Log::error':
+    'prefix': 'l:e'
+    'body': 'Log::error(${1:\'${2:message}\'});'
+  'Log::info':
+    'prefix': 'l:i'
+    'body': 'Log::info(${1:\'${2:message}\'});'
+  'Log':
+    'prefix': 'log'
+    'body': 'Log::${1|debug,info,notice,warning,error,critical,alert|}(${2:\'${3:message}\'});'
+  'Log::warning':
+    'prefix': 'l:w'
+    'body': 'Log::warning(${1:\'${2:message}\'});'
+  'Redirect::action':
+    'prefix': 'redir:a'
+    'body': 'return Redirect::action(\'${1:Controller@method}\')$3;'
+  'Redirect::route':
+    'prefix': 'redir:r'
+    'body': 'return Redirect::route(\'${1:name}\')$3;'
+  'Redirect':
+    'prefix': 'redir'
+    'body': 'return Redirect::${1|to,route,action|}($2)$3;'
+  'Redirect::to':
+    'prefix': 'redir:t'
+    'body': 'return Redirect::to(\'${1:url/}\')$3;'
+  '->withInput':
+    'prefix': 'withi'
+    'body': '->withInput(${1:\'${2:name}\'});$3'
+  'Request::ajax':
+    'prefix': 'r:a'
+    'body': 'Request::ajax()${1:;}'
+  'Request::format':
+    'prefix': 'r:f'
+    'body': 'Request::format()${1:;}'
+  'Request::header':
+    'prefix': 'r:h'
+    'body': 'Request::header(\'${1:Content-Type}\')${2:;}'
+  'Request::is':
+    'prefix': 'r:i'
+    'body': 'Request::is(\'${1:url/*}\')${2:;}'
+  'Request::isJson':
+    'prefix': 'r:ij'
+    'body': 'Request::isJson()${1:;}'
+  'Request::isMethod':
+    'prefix': 'r:im'
+    'body': 'Request::isMethod(\'${1|get,head,post,options,connect,trace,put,patch,delete|}\')${2:;}'
+  'Request::method':
+    'prefix': 'r:m'
+    'body': 'Request::method()${1:;}'
+  'Request::path':
+    'prefix': 'r:p'
+    'body': 'Request::path()${1:;}'
+  'Request::secure':
+    'prefix': 'r:s'
+    'body': 'Request::secure()${1:;}'
+  'Request::segment':
+    'prefix': 'r:s'
+    'body': 'Request::segment(\'${1:1}\')${2:;}'
+  'Request::server':
+    'prefix': 'r:s'
+    'body': 'Request::server(\'${1:PATH_INFO}\')${2:;}'
+  'Request::url':
+    'prefix': 'r:u'
+    'body': 'Request::url()${1:;}'
+  'Request::wantsJson':
+    'prefix': 'r:w'
+    'body': 'Request::wantsJson()${1:;}'
+  'Response::$macro':
+    'prefix': 'resp:mc'
+    'body': 'return Response::caps(\'${1:name}\');'
+  'Response::download':
+    'prefix': 'resp:d'
+    'body': 'return Response::download(${1:\\$filepath}${2:, ${3:\\$name}}${4:, ${5:\\$headers}})$6;'
+  '->header':
+    'prefix': 'header'
+    'body': '->header(\'${1:Content-Type}\', ${2:\'value\'})'
+  'Response::json':
+    'prefix': 'resp:j'
+    'body': 'return Response::json(${1:\\$array})${2:->setCallback(Input::get(\'callback\'))};'
+  'Response::macro':
+    'prefix': 'resp:mc'
+    'body': 'return Response::macro(\'$1\', ${2:function()\n{\n    $3\n\\}});'
+  'Response::make':
+    'prefix': 'resp:m'
+    'body': 'return Response::make(${1:\\$content}, ${2:\\$status})$3;'
+  'Response':
+    'prefix': 'resp'
+    'body': 'return Response::${1|make,view|}($2)$3;'
+  'Response::view':
+    'prefix': 'resp:v'
+    'body': 'return Response::view(\'${1:view}\')$2;'
+  '->withCookie':
+    'prefix': 'withc'
+    'body': '->withCookie( Cookie::make(\'${1:name}\', ${2:\'value\'}) )'
+  'Route::bind':
+    'prefix': 'r:b'
+    'body': 'Route::bind(\'$1\', ${2:function(\\$value, \\$route)\n{\n    $3\n\\}});'
+  'Route::filter':
+    'prefix': 'r:f'
+    'body': 'Route::filter(\'${1:name}\', ${2:function(${3:\\$route}, ${4:\\$request}, ${5:\\$response}, ${6:\\$value})\n{\n    $7\n\\}});'
+  'Route::get':
+    'prefix': 'r:g'
+    'body': 'Route::get(\'$1\', ${2:function()\n{\n    $3\n\\}});'
+  'Route::group':
+    'prefix': 'r:g'
+    'body': 'Route::group(${1:\\$attributes}, ${2:function()\n{\n    $3\n\\}});'
+  'Route::input':
+    'prefix': 'r:i'
+    'body': 'Route::input(${1:\'${2:name}\'})$3'
+  'Route::matched':
+    'prefix': 'r:m'
+    'body': 'Route::matched(${1:function(${2:\\$route}, ${3:\\$request})\n{\n    $4\n\\}});'
+  'Route::model':
+    'prefix': 'r:m'
+    'body': 'Route::model(${1:\'name\'}, ${2:\'Model\'})$3;'
+  'Route::pattern':
+    'prefix': 'r:pa'
+    'body': 'Route::pattern(\'${1:name}\', \'${2:[0-9]+}\');'
+  'Route::post':
+    'prefix': 'r:p'
+    'body': 'Route::post(\'$1\', ${2:function()\n{\n    $3\n\\}});'
+  'Route::resource':
+    'prefix': 'r:r'
+    'body': 'Route::resource(\'$1\', \'${2:Controller}\');'
+  'Route':
+    'prefix': 'route'
+    'body': 'Route::${1|get,post,resource,any,matched,pattern,filter|}(\'$2\', ${3:function()\n{\n    $4\n\\}});'
+  'URL::action':
+    'prefix': 'u:a'
+    'body': 'URL::action(${1:\'${2:Controller}\'${3:, ${4:\\$parameters}}${5:, ${6:\\$absolute}})${7:;}'
+  'URL::asset':
+    'prefix': 'u:a'
+    'body': 'URL::asset(${1:\'${2:css/foo.css}\'}${3:, ${4:\\$secure}})${5:;}'
+  'URL::current':
+    'prefix': 'u:c'
+    'body': 'URL::current()${1:;}'
+  'URL::full':
+    'prefix': 'u:f'
+    'body': 'URL::full()${1:;}'
+  'URL::getGenerator':
+    'prefix': 'u:gg'
+    'body': 'URL::getGenerator()${1:;}'
+  'URL::getRequest':
+    'prefix': 'u:gr'
+    'body': 'URL::getRequest()${1:;}'
+  'URL::isValidUrl':
+    'prefix': 'u:iv'
+    'body': 'URL::isValidUrl(${1:\'${2:http://example.com}\'})${3:;}'
+  'URL::previous':
+    'prefix': 'u:p'
+    'body': 'URL::previous()${1:;}'
+  'URL::route':
+    'prefix': 'u:r'
+    'body': 'URL::route(${1:\'${2:name}\'}${3:, ${4:\\$parameters}}${5:, ${6:\\$absolute}})${7:;}'
+  'URL::secure':
+    'prefix': 'u:s'
+    'body': 'URL::secure(${1:\'${2:foo/bar}\'}${3:, ${4:\\$parameters}})${5:;}'
+  'URL::secureAsset':
+    'prefix': 'u:s'
+    'body': 'URL::secureAsset(${1:\'${2:css/foo.css}\'})${3:;}'
+  'URL::setGenerator':
+    'prefix': 'u:sg'
+    'body': 'URL::setGenerator(${1:\\$generator})${2:;}'
+  'URL::setRequest':
+    'prefix': 'u:sr'
+    'body': 'URL::setRequest(${1:\\$request})${2:;}'
+  'URL::to':
+    'prefix': 'u:t'
+    'body': 'URL::to(${1:\'${2:url/}\'${3:, ${4:\\$parameters}}${5:, ${6:\\$absolute}})${7:;}'
+  'View::composer':
+    'prefix': 'v:co'
+    'body': 'View::composer(\'$1\', ${2:function()\n{\n    $3\n\\}});'
+  'View::creator':
+    'prefix': 'v:cr'
+    'body': 'View::creator(\'$1\', ${2:function()\n{\n    $3\n\\}});'
+  'View::make':
+    'prefix': 'v:m'
+    'body': 'View::make(\'${1:name}\'${2:, \\$array})$3;'
+  '->nest':
+    'prefix': 'nest'
+    'body': '->nest(\'${1:child}\', ${2:\'name\'})'
+  'View::share':
+    'prefix': 'v:s'
+    'body': 'View::share(\'${1:name}\', \'${2:value}\')$3;'
+  'View':
+    'prefix': 'view'
+    'body': 'View::${1|make,share,composer,creator|}($2)$3;'
+  'Route::when':
+    'prefix': 'r:w'
+    'body': 'Route::when(\'${1:url/*}\', \'${2:name}\')$3'
