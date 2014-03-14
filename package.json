@@ -1,6 +1,6 @@
 {
   "name": "laravel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "Adds Laravel snippets",
   "repository": {
@@ -11,6 +11,5 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
