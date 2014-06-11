@@ -197,6 +197,12 @@
   '->with':
     'prefix': ')with'
     'body': '->with(\'${1:name}\', ${2:\'value\'})'
+  '->':
+    'prefix': '.'
+    'body': '->'
+  '->foo()':
+    'prefix': './'
+    'body': '->${1:foo}()'
   'Input::all':
     'prefix': 'i:a'
     'body': 'Input::all();$1'
