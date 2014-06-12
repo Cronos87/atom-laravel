@@ -203,6 +203,9 @@
   '->foo()':
     'prefix': './'
     'body': '->${1:foo}()'
+  '=>':
+    'prefix': '/'
+    'body': '=>'
   'Input::all':
     'prefix': 'i:a'
     'body': 'Input::all();$1'
