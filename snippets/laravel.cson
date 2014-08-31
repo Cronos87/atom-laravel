@@ -179,9 +179,6 @@
   'link_to_route':
     'prefix': 'link:route'
     'body': 'link_to_route(\'${1:route.name}\'${2:, ${3:$title}}${4:, ${5:$parameters}}${6:, ${7:$attributes}})'
-  'route':
-    'prefix': 'route'
-    'body': 'route(\'${1:name}\'${2:, $params})$3'
   'secure_asset':
     'prefix': 'secure:a'
     'body': 'secure_asset(\'${1:foo/bar.zip}\'${2:, ${3:$title}}${4:, ${5:$attributes}})'
@@ -361,7 +358,7 @@
     'body': 'Route::resource(\'$1\', \'${2:Controller}\');'
   'Route':
     'prefix': 'route'
-    'body': 'Route::${1|get,post,resource,any,matched,pattern,filter|}(\'$2\', ${3:function()\n{\n\t$4\n}});'
+    'body': 'Route::${1:get,post,resource,any,matched,pattern,filter}(\'$2\', ${3:function()\n{\n\t$4\n}});'
   'URL::action':
     'prefix': 'u:a'
     'body': 'URL::action(${1:\'${2:Controller}\'${3:, ${4:$parameters}}${5:, ${6:$absolute}})${7:;}'
