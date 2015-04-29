@@ -1,8 +1,8 @@
-# Laravel 4 package
+# Laravel 5 package
 
 Add Laravel snippets
 
-* Laravel 4 snippets
+* Laravel 5 snippets
 * Helpers snippets
 
 ## Credits
