@@ -156,16 +156,16 @@
     prefix: "with"
     body: "with(${1:new Foo})${2:;}"
   app_path:
-    prefix: "path"
+    prefix: "apath"
     body: "app_path();"
   base_path:
-    prefix: "path"
+    prefix: "bpath"
     body: "base_path();"
   public_path:
-    prefix: "path"
+    prefix: "ppath"
     body: "public_path();"
   storage_path:
-    prefix: "path"
+    prefix: "spath"
     body: "storage_path();"
   delete:
     prefix: "delete"
@@ -281,7 +281,7 @@
     prefix: "redirect"
     body: "redirect('${1:url/}')$2;"
   view:
-    prefix: "view"
+    prefix: "hview"
     body: "view('${1:name}'${2:, $array})$3;"
   "->where":
     prefix: "where"
@@ -454,7 +454,7 @@
       \\}});
     '''
   "Route::group":
-    prefix: "r:g"
+    prefix: "r:gr"
     body: '''
       Route::group(${1:$attributes}, ${2:function()
       {
