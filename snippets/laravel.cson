@@ -231,13 +231,13 @@
     body: "str_limit(${1:$string}, ${2:10}, ${3:...});"
   str_plural:
     prefix: "stpl"
-    body: "str_plural(${1:'${2:car}');"
+    body: "str_plural(${1:'${2:car}'});"
   str_random:
     prefix: "stra"
-    body: "str_random(${1:42);"
+    body: "str_random(${1:42});"
   str_singular:
     prefix: "stsi"
-    body: "str_singular(${1:'${2:cars}');"
+    body: "str_singular(${1:'${2:cars}'});"
   studly_case:
     prefix: "stca"
     body: "studly_case(${1:'${2:foo_bar}'});"
